@@ -207,7 +207,7 @@ const d = factorial(4); // d gets the value 24
 const e = factorial(5); // e gets the value 120
 ```
 
-There are other ways to call functions. There are often cases where a function needs to be called dynamically, or the number of arguments to a function vary, or in which the context of the function call needs to be set to a specific object determined at runtime.
+There are other ways to call functions. There are often cases where a function needs to be called dynamically, or the number of arguments to a function varies, or in which the context of the function call needs to be set to a specific object determined at runtime.
 
 It turns out that _functions are themselves objects_—and in turn, these objects have methods. (See the {{jsxref("Function")}} object.) One of these, the {{jsxref("Function.apply", "apply()")}} method, can be used to achieve this goal.
 
@@ -381,7 +381,7 @@ const result1 = outside(3)(5); // returns 8
 
 ### Preservation of variables
 
-Notice how `x` is preserved when `inside` is returned. A closure must preserve the arguments and variables in all scopes it references. Since each call provides potentially different arguments, a new closure is created for each call to `outside`. The memory can be freed only when the returned `inside` is no longer accessible.
+Notice how `x` is preserved when `inside` is returned. A closure must preserve the arguments and variables in all scopes it references. Since each call provides potentially different arguments, a new closure is created for each call  `outside`. The memory can be freed only when the returned `inside` is no longer accessible.
 
 This is not different from storing references in other objects, but is often less obvious because one does not set the references directly and cannot inspect them.
 
@@ -418,7 +418,7 @@ This can be done because:
 2. `C` forms a closure including `B`.
 3. Because `C`'s closure includes `B` and `B`'s closure includes `A`, then `C`'s closure also includes `A`. This means `C` can access _both_ `B` _and_ `A`'s arguments and variables. In other words, `C` _chains_ the scopes of `B` and `A`, _in that order_.
 
-The reverse, however, is not true. `A` cannot access `C`, because `A` cannot access any argument or variable of `B`, which `C` is a variable of. Thus, `C` remains private to only `B`.
+The reverse, however, is not true. `A` cannot access `C`, because `A` cannot access any argument or variable of `B`, of which `C` is a variable . Thus, `C` remains private to only `B`.
 
 ### Name conflicts
 
@@ -716,9 +716,9 @@ JavaScript has several top-level, built-in functions:
 - {{jsxref("Global_Objects/decodeURIComponent", "decodeURIComponent()")}}
   - : The **`decodeURIComponent()`** method decodes a Uniform Resource Identifier (URI) component previously created by {{jsxref("Global_Objects/encodeURIComponent", "encodeURIComponent")}} or by a similar routine.
 - {{jsxref("Global_Objects/encodeURI", "encodeURI()")}}
-  - : The **`encodeURI()`** method encodes a Uniform Resource Identifier (URI) by replacing each instance of certain characters by one, two, three, or four escape sequences representing the UTF-8 encoding of the character (will only be four escape sequences for characters composed of two "surrogate" characters).
+  - : The **`encodeURI()`** method encodes a Uniform Resource Identifier (URI) by replacing each instance of certain characters with one, two, three, or four escape sequences representing the UTF-8 encoding of the character (will only be four escape sequences for characters composed of two "surrogate" characters).
 - {{jsxref("Global_Objects/encodeURIComponent", "encodeURIComponent()")}}
-  - : The **`encodeURIComponent()`** method encodes a Uniform Resource Identifier (URI) component by replacing each instance of certain characters by one, two, three, or four escape sequences representing the UTF-8 encoding of the character (will only be four escape sequences for characters composed of two "surrogate" characters).
+  - : The **`encodeURIComponent()`** method encodes a Uniform Resource Identifier (URI) component by replacing each instance of certain characters with one, two, three, or four escape sequences representing the UTF-8 encoding of the character (will only be four escape sequences for characters composed of two "surrogate" characters).
 - {{jsxref("Global_Objects/escape", "escape()")}}
   - : The deprecated **`escape()`** method computes a new string in which certain characters have been replaced by a hexadecimal escape sequence. Use {{jsxref("Global_Objects/encodeURI", "encodeURI")}} or {{jsxref("Global_Objects/encodeURIComponent", "encodeURIComponent")}} instead.
 - {{jsxref("Global_Objects/unescape", "unescape()")}}
